@@ -15,8 +15,8 @@ def pondere_simple(G):
 
 def __dfs(G, x, M):
     M[x] = True
-    no = 0
+    no = 1
     for adj in G.adjlists[x]:
         if not M[adj]:
-            no = __dfs(G, adj, M) + 1
+            no += __dfs(G, adj, M)
     return no
